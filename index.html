@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Sinusite Bacteriana (EPOS 2020)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+       .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #005a9c;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+       .subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+
+       .criteria-group,.red-flags-group {
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            color: #005a9c;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+       .criterion {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+       .criterion:hover {
+            background-color: #f9f9f9;
+        }
+
+       .criterion input[type="checkbox"] {
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+       .criterion label {
+            font-size: 1.1em;
+            cursor: pointer;
+            flex-grow: 1;
+        }
+
+       .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        #result {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            display: none; /* Hidden by default */
+        }
+
+       .result-unlikely {
+            background-color: #e8f5e9; /* Light Green */
+            color: #2e7d32;
+            border: 1px solid #a5d6a7;
+        }
+
+       .result-likely {
+            background-color: #fff3e0; /* Light Orange */
+            color: #ef6c00;
+            border: 1px solid #ffcc80;
+        }
+        
+       .red-flags-group {
+            background-color: #ffebee;
+            border: 2px solid #c62828;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+       .red-flags-group h2 {
+            color: #c62828;
+            border-bottom: none;
+            margin-top: 0;
+        }
+        
+       .red-flags-group ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+       .red-flags-group li {
+            margin-bottom: 8px;
+        }
+        
+       .red-flags-group p {
+            font-weight: bold;
+            color: #c62828;
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calculadora de Rinossinusite Bacteriana Aguda</h1>
+        <p class="subtitle">Baseada nos critérios do EPOS 2020</p>
+
+        <div class="red-flags-group">
+            <h2><i class="fas fa-exclamation-triangle"></i> Sinais de Alarme (Red Flags)</h2>
+            <p>A presença de QUALQUER um dos seguintes sinais requer encaminhamento IMEDIATO para avaliação especializada/emergência:</p>
+            <ul>
+                <li>- Edema ou vermelhidão periorbitária</li>
+                <li>- Deslocamento do globo ocular</li>
+                <li>- Visão dupla ou reduzida</li>
+                <li>- Oftalmoplegia (paralisia de músculos oculares)</li>
+                <li>- Dor de cabeça frontal severa</li>
+                <li>- Inchaço na região frontal</li>
+                <li>- Sinais de meningite ou défices neurológicos focais</li>
+            </ul>
+        </div>
+
+        <div class="criteria-group">
+            <h2>Critérios para Suspeita de RSAB</h2>
+            <p>Selecione todos os sinais e sintomas presentes. A RSAB é provável se <strong>3 ou mais</strong> critérios forem marcados.</p>
+            <form id="sinusitis-form">
+                <div class="criterion">
+                    <input type="checkbox" id="fever" name="criteria">
+                    <label for="fever">Febre > 38°C</label>
+                </div>
+                <div class="criterion">
+                    <input type="checkbox" id="double-sickening" name="criteria">
+                    <label for="double-sickening">"Dupla Piora" (piora dos sintomas após uma melhora inicial)</label>
+                </div>
+                <div class="criterion">
+                    <input type="checkbox" id="unilateral-pain" name="criteria">
+                    <label for="unilateral-pain">Dor ou sintomas com predominância unilateral</label>
+                </div>
+                <div class="criterion">
+                    <input type="checkbox" id="severe-pain" name="criteria">
+                    <label for="severe-pain">Dor local severa</label>
+                </div>
+                <div class="criterion">
+                    <input type="checkbox" id="crp-esr" name="criteria">
+                    <label for="crp-esr">VHS / PCR elevada (se disponível)</label>
+                </div>
+            </form>
+        </div>
+
+        <div class="btn-container">
+            <button id="calculate-btn">Calcular Probabilidade</button>
+        </div>
+
+        <div id="result"></div>
+
+        <footer>
+            <p><strong>Aviso:</strong> Esta ferramenta é um auxílio para a decisão clínica baseada nas diretrizes do EPOS 2020 e não substitui o julgamento clínico profissional. A avaliação completa do paciente é essencial.</p>
+            <p>Referência: Fokkens WJ, Lund VJ, Hopkins C, et al. European Position Paper on Rhinosinusitis and Nasal Polyps 2020. Rhinology. 2020;58(Suppl S29):1-464.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('calculate-btn').addEventListener('click', function() {
+            // Get all checkboxes with the name 'criteria'
+            const criteria = document.querySelectorAll('input[name="criteria"]:checked');
+            const score = criteria.length;
+            
+            const resultDiv = document.getElementById('result');
+            
+            // Reset previous results
+            resultDiv.style.display = 'block';
+            resultDiv.classList.remove('result-unlikely', 'result-likely');
+            
+            // Determine the result based on the score
+            if (score >= 3) {
+                resultDiv.innerHTML = `<strong>Resultado: RSAB Provável (Pontuação: ${score})</strong><br>Considerar antibioterapia conforme as diretrizes do EPOS 2020. A seleção cuidadosa do paciente é essencial.`;
+                resultDiv.classList.add('result-likely');
+            } else {
+                resultDiv.innerHTML = `<strong>Resultado: RSAB Pouco Provável (Pontuação: ${score})</strong><br>O quadro é mais consistente com Rinossinusite Viral ou Pós-Viral. A antibioterapia não é recomendada. Sugere-se tratamento sintomático.`;
+                resultDiv.classList.add('result-unlikely');
+            }
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
