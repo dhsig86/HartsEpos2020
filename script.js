@@ -19,6 +19,17 @@
             }
         });
 
+        const helpBtn = document.getElementById('help-btn');
+        const helpSection = document.getElementById('help-section');
+
+        helpBtn.addEventListener('click', function() {
+            if (helpSection.style.display === 'block') {
+                helpSection.style.display = 'none';
+            } else {
+                helpSection.style.display = 'block';
+            }
+        });
+
         const flagIcon = document.getElementById('red-flag-icon');
         const flagsPanel = document.getElementById('red-flags-panel');
 
