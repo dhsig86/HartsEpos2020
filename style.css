@@ -147,3 +147,25 @@
             font-size: 0.8em;
             color: #777;
         }
+
+/* Small screen adjustments */
+@media (max-width: 320px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 1.4em;
+    }
+    h2 {
+        font-size: 1.1em;
+    }
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 1em;
+    }
+}
+
