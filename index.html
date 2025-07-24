@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Sinusite Bacteriana (EPOS 2020)</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
     <div class="container">
         <h1>Calculadora de Rinossinusite Bacteriana Aguda</h1>
         <p class="subtitle">Baseada nos critérios do EPOS 2020</p>
+        <button id="help-btn">Ajuda</button>
+        <div id="help-section">
+            <h2>Como usar</h2>
+            <p>Selecione os sinais e sintomas de acordo com o EPOS 2020 e clique em "Calcular Probabilidade".</p>
+            <p>Esta ferramenta serve apenas como guia e não substitui avaliação médica.</p>
+        </div>
 
         <div class="red-flags-group">
             <h2><i class="fas fa-exclamation-triangle"></i> Sinais de Alarme (Red Flags)</h2>
@@ -66,6 +74,7 @@
     </div>
 
     <script src="script.js"></script>
+
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <footer>Criado por Dr. Dario Hart</footer>
 </body>
