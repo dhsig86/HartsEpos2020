@@ -98,6 +98,22 @@
             background-color: #0056b3;
             transform: translateY(-2px);
         }
+        #help-btn {
+            margin-bottom: 15px;
+            background-color: #28a745;
+        }
+        #help-btn:hover {
+            background-color: #218838;
+        }
+        #help-section {
+            display: none;
+            background-color: #e3f2fd;
+            border: 1px solid #90caf9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
 
         #result {
             margin-top: 30px;
@@ -161,6 +177,12 @@
     <div class="container">
         <h1>Calculadora de Rinossinusite Bacteriana Aguda</h1>
         <p class="subtitle">Baseada nos critérios do EPOS 2020</p>
+        <button id="help-btn">Ajuda</button>
+        <div id="help-section">
+            <h2>Como usar</h2>
+            <p>Selecione os sinais e sintomas de acordo com o EPOS 2020 e clique em "Calcular Probabilidade".</p>
+            <p>Esta ferramenta serve apenas como guia e não substitui avaliação médica.</p>
+        </div>
 
         <div class="red-flags-group">
             <h2><i class="fas fa-exclamation-triangle"></i> Sinais de Alarme (Red Flags)</h2>
@@ -216,6 +238,11 @@
     </div>
 
     <script>
+        document.getElementById("help-btn").addEventListener("click", function() {
+            const help = document.getElementById("help-section");
+            help.style.display = help.style.display === "none" ? "block" : "none";
+        });
+
         document.getElementById('calculate-btn').addEventListener('click', function() {
             // Get all checkboxes with the name 'criteria'
             const criteria = document.querySelectorAll('input[name="criteria"]:checked');
