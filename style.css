@@ -88,10 +88,30 @@
             transition: background-color 0.3s, transform 0.2s;
         }
 
-        button:hover {
+       button:hover {
             background-color: #0056b3;
             transform: translateY(-2px);
         }
+
+       /* Help button and panel */
+       #help-btn {
+            margin-bottom: 15px;
+            background-color: #28a745;
+       }
+
+       #help-btn:hover {
+            background-color: #218838;
+       }
+
+       #help-section {
+            display: none;
+            background-color: #e3f2fd;
+            border: 1px solid #90caf9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+       }
 
         #result {
             margin-top: 30px;
