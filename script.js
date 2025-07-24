@@ -18,3 +18,14 @@
                 resultDiv.classList.add('result-unlikely');
             }
         });
+
+        const flagIcon = document.getElementById('red-flag-icon');
+        const flagsPanel = document.getElementById('red-flags-panel');
+
+        function showFlags() {
+            flagsPanel.style.display = 'block';
+        }
+
+        flagIcon.addEventListener('click', showFlags);
+        flagIcon.addEventListener('mouseenter', showFlags);
+        flagIcon.addEventListener('touchstart', showFlags);
