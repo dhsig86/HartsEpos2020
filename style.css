@@ -1,9 +1,17 @@
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
+        :root {
+            --cor-primaria: #63C1B2;
+            --cor-fundo: #F2F2F2;
+            --cor-texto-principal: #6F6F6F;
+            --cor-texto-secundario: #8C8C8C;
+            --cor-texto-contraste: #FFFFFF;
+        }
+
         body {
             font-family: 'Lato', sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
             margin: 0;
             padding: 20px;
             display: flex;
@@ -22,14 +30,14 @@
         }
 
         h1 {
-            color: #005a9c;
+            color: var(--cor-texto-principal);
             text-align: center;
             margin-bottom: 10px;
         }
         
        .subtitle {
             text-align: center;
-            color: #555;
+            color: var(--cor-texto-secundario);
             margin-bottom: 30px;
             font-size: 1.1em;
             font-weight: 600;
@@ -40,7 +48,7 @@
         }
 
         h2 {
-            color: #005a9c;
+            color: var(--cor-primaria);
             border-bottom: 2px solid #e0e0e0;
             padding-bottom: 5px;
             margin-bottom: 15px;
@@ -75,11 +83,15 @@
        .btn-container {
             text-align: center;
             margin-top: 30px;
+       }
+
+       .btn-container button {
+            margin: 5px;
         }
 
-        button {
-            background-color: #007bff;
-            color: white;
+       button {
+            background-color: var(--cor-primaria);
+            color: var(--cor-texto-contraste);
             border: none;
             padding: 15px 30px;
             font-size: 1.2em;
@@ -89,18 +101,13 @@
         }
 
        button:hover {
-            background-color: #0056b3;
+            background-color: #4fa79b;
             transform: translateY(-2px);
         }
 
        /* Help button and panel */
        #help-btn {
-            margin-bottom: 15px;
-            background-color: #28a745;
-       }
-
-       #help-btn:hover {
-            background-color: #218838;
+            margin: 0 auto 15px auto;
        }
 
        #help-section {
@@ -112,6 +119,20 @@
             margin-bottom: 20px;
             font-size: 0.9em;
        }
+
+       #prescriptions-section {
+            display: none;
+            margin-top: 20px;
+        }
+
+       #print-container {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+       #print-btn {
+            display: none;
+        }
 
         #result {
             margin-top: 30px;

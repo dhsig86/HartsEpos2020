@@ -2,7 +2,7 @@
             // Get all checkboxes with the name 'criteria'
             const criteria = document.querySelectorAll('input[name="criteria"]:checked');
             const score = criteria.length;
-            
+
             const resultDiv = document.getElementById('result');
             
             // Reset previous results
@@ -17,6 +17,7 @@
                 resultDiv.innerHTML = `<strong>Resultado: RSAB Pouco Provável (Pontuação: ${score})</strong><br>O quadro é mais consistente com Rinossinusite Viral ou Pós-Viral. A antibioterapia não é recomendada. Sugere-se tratamento sintomático.`;
                 resultDiv.classList.add('result-unlikely');
             }
+            printBtn.style.display = 'inline-block';
         });
 
         const helpBtn = document.getElementById('help-btn');
@@ -40,3 +41,33 @@
         flagIcon.addEventListener('click', showFlags);
         flagIcon.addEventListener('mouseenter', showFlags);
         flagIcon.addEventListener('touchstart', showFlags);
+
+        const resetBtn = document.getElementById('reset-btn');
+        const printBtn = document.getElementById('print-btn');
+        const prescriptionsBtn = document.getElementById('prescriptions-btn');
+        const backBtn = document.getElementById('back-btn');
+        const prescriptionsSection = document.getElementById('prescriptions-section');
+        const mainContainer = document.querySelector('.container');
+
+        resetBtn.addEventListener('click', function() {
+            document.querySelectorAll('input[name="criteria"]').forEach(cb => cb.checked = false);
+            resultDiv.style.display = 'none';
+            resultDiv.classList.remove('result-unlikely', 'result-likely');
+            resultDiv.innerHTML = '';
+            printBtn.style.display = 'none';
+        });
+
+        printBtn.addEventListener('click', function() {
+            window.print();
+        });
+
+        prescriptionsBtn.addEventListener('click', function() {
+            document.getElementById('result').scrollIntoView();
+            document.getElementById('result').style.display = 'none';
+            prescriptionsSection.style.display = 'block';
+        });
+
+        backBtn.addEventListener('click', function() {
+            prescriptionsSection.style.display = 'none';
+            resultDiv.style.display = 'block';
+        });
