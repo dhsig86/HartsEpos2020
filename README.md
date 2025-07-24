@@ -17,3 +17,4 @@ The result area explains whether antibiotic therapy should be considered accordi
 ## Help Section
 
 On the main page there is an **Ajuda** button. Clicking it toggles a short description of how to use the calculator and cites the EPOS 2020 reference. Use this help panel whenever you need a reminder of the steps above.
+
