@@ -38,9 +38,22 @@
             flagsPanel.style.display = 'block';
         }
 
-        flagIcon.addEventListener('click', showFlags);
+        function toggleFlags() {
+            if (flagsPanel.style.display === 'block') {
+                flagsPanel.style.display = 'none';
+            } else {
+                flagsPanel.style.display = 'block';
+            }
+        }
+
+        function hideFlags() {
+            flagsPanel.style.display = 'none';
+        }
+
+        flagIcon.addEventListener('click', toggleFlags);
         flagIcon.addEventListener('mouseenter', showFlags);
-        flagIcon.addEventListener('touchstart', showFlags);
+        flagIcon.addEventListener('touchstart', toggleFlags);
+        flagsPanel.addEventListener('mouseleave', hideFlags);
 
         const resetBtn = document.getElementById('reset-btn');
         const printBtn = document.getElementById('print-btn');
