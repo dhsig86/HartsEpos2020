@@ -1,9 +1,10 @@
+        const resultDiv = document.getElementById('result');
+
         document.getElementById('calculate-btn').addEventListener('click', function() {
             // Get all checkboxes with the name 'criteria'
             const criteria = document.querySelectorAll('input[name="criteria"]:checked');
             const score = criteria.length;
 
-            const resultDiv = document.getElementById('result');
             
             // Reset previous results
             resultDiv.style.display = 'block';
@@ -75,8 +76,8 @@
         });
 
         prescriptionsBtn.addEventListener('click', function() {
-            document.getElementById('result').scrollIntoView();
-            document.getElementById('result').style.display = 'none';
+            resultDiv.scrollIntoView();
+            resultDiv.style.display = 'none';
             prescriptionsSection.style.display = 'block';
         });
 
