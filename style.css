@@ -85,9 +85,15 @@
             margin-top: 30px;
        }
 
-       .btn-container button {
+.btn-container button {
             margin: 5px;
         }
+
+#calculate-btn,
+#reset-btn {
+    display: block;
+    width: 100%;
+}
 
        button {
             background-color: var(--cor-primaria);
