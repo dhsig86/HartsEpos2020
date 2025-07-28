@@ -89,8 +89,7 @@
             margin: 5px;
         }
 
-#calculate-btn,
-#reset-btn {
+#calculate-btn {
     display: block;
     width: 100%;
 }
