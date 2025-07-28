@@ -72,7 +72,6 @@
         const prescriptionsBtn = document.getElementById('prescriptions-btn');
         const backBtn = document.getElementById('back-btn');
         const prescriptionsSection = document.getElementById('prescriptions-section');
-        const mainContainer = document.querySelector('.container');
 
         resetBtn.addEventListener('click', function() {
             document.querySelectorAll('input[name="criteria"]').forEach(cb => cb.checked = false);
