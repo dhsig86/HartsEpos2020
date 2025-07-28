@@ -79,8 +79,9 @@
             resultDiv.classList.remove('result-unlikely', 'result-likely');
             resultDiv.innerHTML = '';
             printBtn.style.display = 'none';
-            antibioticContent.textContent = 'Conteúdo será adicionado futuramente.';
-            isLikely = null;
+
+            prescriptionsSection.style.display = 'none';
+
         });
 
         printBtn.addEventListener('click', function() {
@@ -98,5 +99,7 @@
 
         backBtn.addEventListener('click', function() {
             prescriptionsSection.style.display = 'none';
-            resultDiv.style.display = 'block';
+            if (resultDiv.innerHTML.trim() !== '') {
+                resultDiv.style.display = 'block';
+            }
         });
