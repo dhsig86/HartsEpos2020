@@ -19,9 +19,9 @@
                 resultDiv.classList.add('result-likely');
                 antibioticContent.innerHTML =
                     'Guia Rápido de Antibioticoterapia para RSAB:<br>' +
-                    '- Amoxicilina 500&nbsp;mg VO a cada 8&nbsp;h por 7&nbsp;dias.<br>' +
-                    '- Casos moderados ou risco de resistência: Amoxicilina-Clavulanato 875/125&nbsp;mg a cada 12&nbsp;h por 5&nbsp;a&nbsp;7&nbsp;dias.<br>' +
-                    '- Alergia a penicilina: Doxiciclina 100&nbsp;mg 12/12&nbsp;h ou Claritromicina 500&nbsp;mg 12/12&nbsp;h por 7&nbsp;dias.<br>' +
+                    '- Amoxicilina 500&nbsp;mg VO a cada 8&nbsp;h por 7&nbsp;a&nbsp;14&nbsp;dias.<br>' +
+                    '- Casos moderados ou risco de resistência: Amoxicilina-Clavulanato 875/125&nbsp;mg a cada 12&nbsp;h por 7&nbsp;a&nbsp;14&nbsp;dias.<br>' +
+                    '- Alergia a penicilina: Doxiciclina 100&nbsp;mg 12/12&nbsp;h ou Claritromicina 500&nbsp;mg 12/12&nbsp;h por 7&nbsp;a&nbsp;14&nbsp;dias.<br>' +
                     '- Reavaliar em 48&ndash;72&nbsp;h se ausência de melhora.';
             } else {
                 isLikely = false;
