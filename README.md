@@ -10,7 +10,7 @@ This project demonstrates how the diagnostic recommendations from the European P
 
 1. Review the listed red flags. The presence of any of these signs means the patient should be referred immediately for specialized care.
 2. Mark each symptom or sign that is present in the "Critérios" section.
-3. Click **Calcular Probabilidade** to see whether ABRS is likely (three or more criteria) or unlikely.
+3. Click **Calcular** to see whether ABRS is likely (three or more criteria) or unlikely.
 
 The result area explains whether antibiotic therapy should be considered according to EPOS 2020.
 

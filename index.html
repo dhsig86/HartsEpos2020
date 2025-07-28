@@ -14,10 +14,9 @@
         <h1>Calculadora de Rinossinusite Bacteriana Aguda</h1>
         <p class="subtitle">Baseada nos critérios do EPOS 2020</p>
         <button id="help-btn">Ajuda</button>
-        <button id="prescriptions-btn">Recomendações de Antibiótico</button>
         <div id="help-section">
             <h2>Como usar</h2>
-            <p>Selecione os sinais e sintomas de acordo com o EPOS 2020 e clique em "Calcular Probabilidade".</p>
+            <p>Selecione os sinais e sintomas de acordo com o EPOS 2020 e clique em "Calcular".</p>
             <p>Esta ferramenta serve apenas como guia e não substitui avaliação médica.</p>
         </div>
 
@@ -67,8 +66,7 @@
         </div>
 
         <div class="btn-container">
-            <button id="calculate-btn">Calcular Probabilidade</button>
-            <button id="reset-btn">Resetar</button>
+            <button id="calculate-btn">Calcular</button>
         </div>
 
         <div class="btn-container" id="print-container">
@@ -77,10 +75,17 @@
 
         <div id="result"></div>
 
+        <div class="btn-container">
+            <button id="prescriptions-btn">Recomendações de Antibiótico</button>
+        </div>
+
         <div id="prescriptions-section">
             <h2>Prescrições e Recomendações de Antibióticos</h2>
             <p id="antibiotic-content">Conteúdo será adicionado futuramente.</p>
-            <button id="back-btn">Voltar ao Teste</button>
+            <div class="btn-container">
+                <button id="back-btn">Voltar ao Teste</button>
+                <button id="reset-btn">Resetar</button>
+            </div>
         </div>
 
         <footer>
