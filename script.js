@@ -1,4 +1,6 @@
         const resultDiv = document.getElementById('result');
+        const antibioticContent = document.getElementById('antibiotic-content');
+        let isLikely = null;
 
         document.getElementById('calculate-btn').addEventListener('click', function() {
             // Get all checkboxes with the name 'criteria'
@@ -12,11 +14,15 @@
             
             // Determine the result based on the score
             if (score >= 3) {
+                isLikely = true;
                 resultDiv.innerHTML = `<strong>Resultado: RSAB Provável (Pontuação: ${score})</strong><br>Considerar antibioterapia conforme as diretrizes do EPOS 2020. A seleção cuidadosa do paciente é essencial.`;
                 resultDiv.classList.add('result-likely');
+                antibioticContent.textContent = 'RSAB provável: considerar amoxicilina-clavulanato por 5–10 dias. Avaliar alergias e fatores de risco.';
             } else {
+                isLikely = false;
                 resultDiv.innerHTML = `<strong>Resultado: RSAB Pouco Provável (Pontuação: ${score})</strong><br>O quadro é mais consistente com Rinossinusite Viral ou Pós-Viral. A antibioterapia não é recomendada. Sugere-se tratamento sintomático.`;
                 resultDiv.classList.add('result-unlikely');
+                antibioticContent.textContent = 'Sem indicação de antibiótico. Ofereça apenas tratamento sintomático e corticoide nasal.';
             }
             printBtn.style.display = 'inline-block';
         });
@@ -69,6 +75,8 @@
             resultDiv.classList.remove('result-unlikely', 'result-likely');
             resultDiv.innerHTML = '';
             printBtn.style.display = 'none';
+            antibioticContent.textContent = 'Conteúdo será adicionado futuramente.';
+            isLikely = null;
         });
 
         printBtn.addEventListener('click', function() {
@@ -76,9 +84,12 @@
         });
 
         prescriptionsBtn.addEventListener('click', function() {
-            resultDiv.scrollIntoView();
-            resultDiv.style.display = 'none';
             prescriptionsSection.style.display = 'block';
+            resultDiv.style.display = 'none';
+            if (isLikely === null) {
+                antibioticContent.textContent = 'Calcule a probabilidade antes de visualizar as recomendações.';
+            }
+            prescriptionsSection.scrollIntoView();
         });
 
         backBtn.addEventListener('click', function() {
