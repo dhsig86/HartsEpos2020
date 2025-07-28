@@ -63,9 +63,15 @@
         }
 
         flagIcon.addEventListener('click', toggleFlags);
-        flagIcon.addEventListener('mouseenter', showFlags);
         flagIcon.addEventListener('touchstart', toggleFlags);
-        flagsPanel.addEventListener('mouseleave', hideFlags);
+
+        document.addEventListener('click', function(event) {
+            if (flagsPanel.style.display === 'block' &&
+                !flagsPanel.contains(event.target) &&
+                !flagIcon.contains(event.target)) {
+                hideFlags();
+            }
+        });
 
         const resetBtn = document.getElementById('reset-btn');
         const printBtn = document.getElementById('print-btn');
