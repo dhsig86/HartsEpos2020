@@ -1,4 +1,6 @@
         const resultDiv = document.getElementById('result');
+        const antibioticContent = document.getElementById('antibiotic-content');
+        let isLikely = false;
 
         document.getElementById('calculate-btn').addEventListener('click', function() {
             // Get all checkboxes with the name 'criteria'
@@ -14,9 +16,17 @@
             if (score >= 3) {
                 resultDiv.innerHTML = `<strong>Resultado: RSAB Provável (Pontuação: ${score})</strong><br>Considerar antibioterapia conforme as diretrizes do EPOS 2020. A seleção cuidadosa do paciente é essencial.`;
                 resultDiv.classList.add('result-likely');
+                isLikely = true;
+                antibioticContent.innerHTML =
+                    'Guia Rápido de Antibioticoterapia para RSAB:<br>' +
+                    '- Amoxicilina 500&nbsp;mg VO a cada 8&nbsp;h por 7&nbsp;dias.<br>' +
+                    '- Casos moderados ou risco de resistência: Amoxicilina-Clavulanato 875/125&nbsp;mg a cada 12&nbsp;h por 5&nbsp;a&nbsp;7&nbsp;dias.<br>' +
+                    '- Alergia a penicilina: Doxiciclina 100&nbsp;mg 12/12&nbsp;h ou Claritromicina 500&nbsp;mg 12/12&nbsp;h por 7&nbsp;dias.<br>' +
+                    '- Reavaliar em 48&ndash;72&nbsp;h se ausência de melhora.';
             } else {
                 resultDiv.innerHTML = `<strong>Resultado: RSAB Pouco Provável (Pontuação: ${score})</strong><br>O quadro é mais consistente com Rinossinusite Viral ou Pós-Viral. A antibioterapia não é recomendada. Sugere-se tratamento sintomático.`;
                 resultDiv.classList.add('result-unlikely');
+                isLikely = false;
             }
             printBtn.style.display = 'inline-block';
         });
