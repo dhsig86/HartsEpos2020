@@ -161,12 +161,13 @@
             border: 1px solid #ffcc80;
         }
         
-       .red-flags-group {
-            background-color: #ffebee;
-            border: 2px solid #c62828;
-            padding: 15px;
-            border-radius: 8px;
-        }
+.red-flags-group {
+     background-color: #ffebee;
+     border: 2px solid #c62828;
+     padding: 15px;
+     border-radius: 8px;
+     margin: 0 auto;
+ }
         
        .red-flags-group h2 {
             color: #c62828;
@@ -203,9 +204,17 @@
             margin-bottom: 10px;
         }
 
-       #red-flags-panel {
-            display: none;
-        }
+#red-flags-panel {
+     display: none;
+     max-width: 600px;
+     width: 100%;
+     margin: 20px auto;
+     box-sizing: border-box;
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ }
 
 /* Small screen adjustments */
 @media (max-width: 320px) {
