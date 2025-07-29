@@ -47,28 +47,35 @@
 
         const flagIcon = document.getElementById('red-flag-icon');
         const flagsPanel = document.getElementById('red-flags-panel');
+        const flagsOverlay = document.getElementById('red-flags-overlay');
+        const closeFlagsBtn = document.getElementById('close-flags');
 
         function showFlags() {
-            flagsPanel.style.display = 'block';
-        }
-
-        function toggleFlags() {
-            if (flagsPanel.style.display === 'block') {
-                flagsPanel.style.display = 'none';
-            } else {
-                flagsPanel.style.display = 'block';
-            }
+            flagsPanel.classList.add('visible');
+            flagsOverlay.classList.add('visible');
         }
 
         function hideFlags() {
-            flagsPanel.style.display = 'none';
+            flagsPanel.classList.remove('visible');
+            flagsOverlay.classList.remove('visible');
+        }
+
+        function toggleFlags() {
+            if (flagsPanel.classList.contains('visible')) {
+                hideFlags();
+            } else {
+                showFlags();
+            }
         }
 
         flagIcon.addEventListener('click', toggleFlags);
         flagIcon.addEventListener('touchstart', toggleFlags);
+        closeFlagsBtn.addEventListener('click', hideFlags);
+        closeFlagsBtn.addEventListener('touchstart', hideFlags);
+        flagsOverlay.addEventListener('click', hideFlags);
 
         document.addEventListener('click', function(event) {
-            if (flagsPanel.style.display === 'block' &&
+            if (flagsPanel.classList.contains('visible') &&
                 !flagsPanel.contains(event.target) &&
                 !flagIcon.contains(event.target)) {
                 hideFlags();
