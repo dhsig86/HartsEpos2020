@@ -81,18 +81,19 @@
         }
 
        .btn-container {
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
             margin-top: 30px;
        }
 
 .btn-container button {
+            width: 100%;
+            max-width: 250px;
             margin: 5px;
         }
 
-#calculate-btn {
-    display: block;
-    width: 100%;
-}
 
        button {
             background-color: var(--cor-primaria);
@@ -130,10 +131,6 @@
             margin-top: 20px;
         }
 
-       #print-container {
-            text-align: center;
-            margin-top: 15px;
-        }
 
        #print-btn {
             display: none;
