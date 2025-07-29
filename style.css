@@ -119,8 +119,12 @@
        /* Help button and panel */
        #help-btn {
             margin: 0 auto 15px auto;
+            font-size: 0.9em;
+            max-width: 150px;
+            border: 2px solid var(--cor-primaria);
             background-color: #b3e5fc;
             color: #000000;
+
        }
 
        #help-section {
