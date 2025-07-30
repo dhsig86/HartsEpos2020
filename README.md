@@ -18,3 +18,7 @@ The result area explains whether antibiotic therapy should be considered accordi
 
 On the main page there is an **Ajuda** button. Clicking it toggles a short description of how to use the calculator and cites the EPOS 2020 reference. Use this help panel whenever you need a reminder of the steps above.
 
+## Design
+
+The interface now uses a modern "super calculator" style. The page features a fixed background with a sinus-inspired nose illustration and a semi-transparent card for the calculator itself. The red-flag alert panel was also updated for improved readability.
+
